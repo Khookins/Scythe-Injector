@@ -108,7 +108,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(669, 43);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 22);
+            this.button1.Size = new System.Drawing.Size(118, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Configure DLL";
             this.button1.UseVisualStyleBackColor = false;
@@ -131,7 +131,7 @@
             this.ClientSize = new System.Drawing.Size(800, 325);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Scythe Exploiter";

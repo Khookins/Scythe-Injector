@@ -104,6 +104,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Refresh Process List";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -120,12 +121,13 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox1.ForeColor = System.Drawing.Color.Lime;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(5, 83);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(579, 24);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.Text = "Process List";
             // 
             // button1
             // 

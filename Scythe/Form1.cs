@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,6 +18,13 @@ namespace Scythe
         public Form1()
         {
             InitializeComponent();
+
+            Process[] PC = Process.GetProcesses().Where(p => (long)p.MainWindowHandle != 0).ToArray();
+            comboBox1.Items.Clear();
+            foreach (Process p in PC)
+            {
+                comboBox1.Items.Add(p.ProcessName);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -66,6 +74,16 @@ namespace Scythe
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             dllp = textBox1.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Process[] PC = Process.GetProcesses().Where(p => (long)p.MainWindowHandle != 0).ToArray();
+            comboBox1.Items.Clear();
+            foreach (Process p in PC)
+            {
+                comboBox1.Items.Add(p.ProcessName);
+            }
         }
     }
 }

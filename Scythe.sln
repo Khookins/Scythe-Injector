@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scythe", "Scythe\Scythe.csproj", "{7D25F41F-301C-4186-BBCD-B94D57CAA838}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Scythe Injector Installer", "..\Scythe Injector Installer\Scythe Injector Installer\Scythe Injector Installer.vdproj", "{8763027F-5C88-4279-A966-8B7C5CA035BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7D25F41F-301C-4186-BBCD-B94D57CAA838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D25F41F-301C-4186-BBCD-B94D57CAA838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D25F41F-301C-4186-BBCD-B94D57CAA838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8763027F-5C88-4279-A966-8B7C5CA035BA}.Debug|Any CPU.ActiveCfg = Debug
+		{8763027F-5C88-4279-A966-8B7C5CA035BA}.Debug|Any CPU.Build.0 = Debug
+		{8763027F-5C88-4279-A966-8B7C5CA035BA}.Release|Any CPU.ActiveCfg = Release
+		{8763027F-5C88-4279-A966-8B7C5CA035BA}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

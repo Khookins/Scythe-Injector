@@ -33,11 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(750, 31);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Scythe Roblox Exploiter";
+            this.label2.Text = "Scythe Roblox Injector";
             // 
             // panel2
             // 
@@ -92,6 +92,30 @@
             this.panel2.Size = new System.Drawing.Size(594, 207);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(5, 167);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(579, 30);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Refresh Process List";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(5, 131);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(579, 30);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Inject DLL";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -116,6 +140,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Configure DLL";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -127,30 +152,7 @@
             this.textBox1.Size = new System.Drawing.Size(455, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Path To DLL";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(5, 131);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(579, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Inject DLL";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(5, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(579, 30);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Refresh Process List";
-            this.button3.UseVisualStyleBackColor = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -164,7 +166,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Scythe Roblox Exploiter";
+            this.Text = "Scythe Roblox Injector";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

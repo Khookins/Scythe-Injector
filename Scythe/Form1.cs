@@ -16,6 +16,7 @@ namespace Scythe
 {
     public partial class Form1 : Form
     {
+        public Point mouseLocation;
         public Form1()
         {
             InitializeComponent();
@@ -28,9 +29,28 @@ namespace Scythe
             }
         }
 
+        private void mouse_Down(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void mouse_Move(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            if (MessageBox.Show("Are You Sure You Want To Exit?", "Exit Prompt", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
 
         private static string dllp { get; set; }
@@ -137,34 +157,54 @@ namespace Scythe
             IntPtr hndProc = OpenProcess((0x2 | 0x8 | 0x10 | 0x20 | 0x400), 1, p);
             if (hndProc == INTPTR_ZERO) return false;
             IntPtr lpAddress = VirtualAllocEx(hndProc, (IntPtr)null, (IntPtr)dllp.Length, (0x1000 | 0x2000), 0x40);
-            if (lpAddress == INTPTR_ZERO)return false;
+            if (lpAddress == INTPTR_ZERO) return false;
             byte[] bytes = Encoding.ASCII.GetBytes(ddlp);
 
             if (WriteProcessMemory(hndProc, lpAddress, bytes, (uint)bytes.Length, 0).ToInt32() == 0) return false;
             CloseHandle(hndProc);
-            return true;          
+            return true;
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            run_Inject();
+        }
+
+        private void run_Inject()
         {
             int Result = Inject(comboBox1.Text, dllp);
 
             if (Result == 1)
             {
-                MessageBox.Show("File Doesn't Exist / No DLL Selected");
+                MessageBox.Show("File Doesn't Exist / No DLL Selected", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (Result == 2)
             {
-                MessageBox.Show("No Process Selected");
+                MessageBox.Show("No Process Selected", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (Result == 3)
             {
-                MessageBox.Show("Injection Failed");
+                if (MessageBox.Show("Injection Failed", "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                {
+                    MessageBox.Show("Retrying Inject...", "Retry Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Inject(comboBox1.Text, dllp);
+                    run_Inject();
+                }
             }
             if (Result == 4)
             {
-                MessageBox.Show("Injection Succeeded");
+                MessageBox.Show("Injection Succeeded", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Select Your DLL File.\n2. Select Your Program. \n3. Inject DLL. \n4. Can't Find Your Program? Hit Refresh Program List. ", "Info Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 

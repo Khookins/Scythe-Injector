@@ -199,7 +199,7 @@ namespace Scythe
 
         private void label3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1. Select Your DLL File.\n2. Select Your Program. \n3. Inject DLL. \n4. Can't Find Your Program? Hit Refresh Program List. ", "Info Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("1. Select Your DLL File.\n2. Select Your Program. \n3. Inject DLL. \n4. Can't Find Your Program? Hit Refresh Process List. ", "Info Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void label4_Click(object sender, EventArgs e)
